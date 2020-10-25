@@ -31,4 +31,4 @@ build/
 
 ### VS Code ###
 .vscode/
-/one-piece-study-daotool/src/main/resources/application.yml
+*application.yml
