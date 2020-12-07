@@ -8,28 +8,32 @@ import java.io.Serializable;
 
 /**
  * <p>
- * 用户信息
+ * 分组信息
  * </p>
  *
  * @author thb
- * @since 2020-12-08
+ * @since 2020-12-07
  */
-@TableName("user_info")
-public class UserInfo implements Serializable {
+@TableName("group_info")
+public class GroupInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * id
+     */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
-    private String username;
-
-    private String noteInfo;
+    /**
+     * 名称
+     */
+    private String name;
 
     /**
-     * 用户状态
+     * 备注信息
      */
-    private Integer userStatus;
+    private String noteInfo;
 
     /**
      * 创建时间
@@ -48,12 +52,12 @@ public class UserInfo implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
     }
     public String getNoteInfo() {
         return noteInfo;
@@ -61,13 +65,6 @@ public class UserInfo implements Serializable {
 
     public void setNoteInfo(String noteInfo) {
         this.noteInfo = noteInfo;
-    }
-    public Integer getUserStatus() {
-        return userStatus;
-    }
-
-    public void setUserStatus(Integer userStatus) {
-        this.userStatus = userStatus;
     }
     public LocalDateTime getCreateTime() {
         return createTime;
@@ -86,11 +83,10 @@ public class UserInfo implements Serializable {
 
     @Override
     public String toString() {
-        return "UserInfo{" +
+        return "GroupInfo{" +
         "id=" + id +
-        ", username=" + username +
+        ", name=" + name +
         ", noteInfo=" + noteInfo +
-        ", userStatus=" + userStatus +
         ", createTime=" + createTime +
         ", updateTime=" + updateTime +
         "}";
